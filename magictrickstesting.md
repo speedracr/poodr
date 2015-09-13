@@ -21,3 +21,5 @@ breaks.
 * The only outgoing functions to test: Commands! (not queries) But: make
   sure you're not testing whether something eventually gets changed in
 the DB, because that is most likely not the function's responsibility.
+
+----
