@@ -31,3 +31,24 @@ Also turns values into arrays:
 a = *"Hello"  # ["Hello"]
 a = *(1..3)   # [1,2,3]
 ```
+
+### Testing approach
+Vanilla TDD: test for each variation
+Pass in (1) one relevant object, (2) zero relevant objects, (3) >1
+relevant objects; pass in (4) one irrelevant object, (5) >1 irrelevant
+objects.
+
+To cushion that, add a guard clause to your function, e.g.
+``` ruby
+def foo(bar, baz)
+  return nil unless foo && baz
+  actual code
+end
+```
+This way, I already guard against nil objects/ no objects being passed
+in and don't need to test for that case.
+
+From big to small: When starting out, there is nothing wrong with
+writing an entire integration test. As your code gets more precise, you
+can always jump in and move to unit tests only to speed up the test
+suite.
