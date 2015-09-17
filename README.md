@@ -32,6 +32,20 @@ a = *"Hello"  # ["Hello"]
 a = *(1..3)   # [1,2,3]
 ```
 
+### Enumerables
+The work horse, so read up on this isht.
+
+One handy trick: `.map`. In contrast to `.each`, this will return a new
+array with the result of the map operation:
+``` ruby
+@charity.charity_admins.map { |a| a.user_id }
+```
+
+Here is the kicker: We can shorten that to
+``` ruby
+@charity.charity_admins.map(&:user_id)
+```
+
 ### Testing approach
 Vanilla TDD: test for each variation
 Pass in (1) one relevant object, (2) zero relevant objects, (3) >1
