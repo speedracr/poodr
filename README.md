@@ -46,6 +46,18 @@ Here is the kicker: We can shorten that to
 @charity.charity_admins.map(&:user_id)
 ```
 
+Even works to run a certain method on each element of an array:
+``` ruby
+class Numeric
+def plusone
+  self + 1
+end
+end
+[1,2,3].map(&:plusone)
+```
+More:
+[http://stackoverflow.com/questions/12084507/what-does-the-map-method-do-in-ruby]
+
 ### Testing approach
 Vanilla TDD: test for each variation
 Pass in (1) one relevant object, (2) zero relevant objects, (3) >1
