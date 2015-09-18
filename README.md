@@ -58,6 +58,12 @@ end
 More:
 [http://stackoverflow.com/questions/12084507/what-does-the-map-method-do-in-ruby]
 
+### Also read
+[http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/]
+[http://rubyinrails.com/2014/06/05/rails-pluck-vs-select-map-collect/]
+[https://hackhands.com/ruby-on-enums-queries-and-rails-4-1/]
+
+
 ### Testing approach
 Vanilla TDD: test for each variation
 Pass in (1) one relevant object, (2) zero relevant objects, (3) >1
