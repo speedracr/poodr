@@ -31,3 +31,6 @@ Also turns values into arrays:
 a = *"Hello"  # ["Hello"]
 a = *(1..3)   # [1,2,3]
 ```
+
+Further reading:
+[https://4loc.wordpress.com/2009/01/16/the-splat-operator-in-ruby/]
