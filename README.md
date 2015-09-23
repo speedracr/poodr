@@ -87,3 +87,34 @@ From big to small: When starting out, there is nothing wrong with
 writing an entire integration test. As your code gets more precise, you
 can always jump in and move to unit tests only to speed up the test
 suite.
+
+### Performance improvement: *Memoization*
+Scenario: You are running a method that includes a potentially slow
+query over and over in your code. To cache the result the first time
+around, memoization via `||=` comes into play. Best practice is to
+separate out the exact operation into its own function:
+
+``` ruby
+class Company < ActiveRecord::Base
+def current_budget
+  @current_budget ||= calculate_budget(2015)
+end
+
+private
+
+  def calculate_budget(budget_year)
+    Foo.bar(budget_year)
+  end
+
+```
+
+Note: if the function whose result is now cached in our instance
+variable returns nil or false, there will not be a caching effect. (I.e,
+if `Company.current_budget` had returned `false` or `nil` the last time around,
+the application would run the `calculate_budget` function again when
+calling `Company.current_budget`.
+
+More detailed example:
+[https://www.youtube.com/watch?v=lB_HS81yH94](Railscast #137)
+[http://www.railway.at/articles/2008/09/20/a-guide-to-memoization/](Memo-what
+blog post)
