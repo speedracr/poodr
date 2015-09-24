@@ -118,3 +118,5 @@ More detailed example:
 [https://www.youtube.com/watch?v=lB_HS81yH94](Railscast #137)
 [http://www.railway.at/articles/2008/09/20/a-guide-to-memoization/](Memo-what
 blog post)
+
+### Ahh, this is an emergency commit!!
