@@ -146,3 +146,21 @@ puts Halloween.date # => Oct 31, 2015
 If you're worrying about inheritable attributes, e.g. for a subclass
 that inherits from `Halloween`, then fret no more: Rails has features
 for that. (Possibly to be covered elsewhere.)
+
+### Enumerables: `select`
+Or: How can I filter certain objects from an array?
+Imagine we have an array of books, all with a title, author and
+category. To go in and filter for a certain category, we can use the
+beauty of `select`:
+
+``` ruby
+def all_from_category category
+  @books.select do |book|
+    book.category == category
+  end
+end
+```
+
+This way, calling `@books.all_from_category(:biography)` will take the
+`@books` array and return an array composed just of those books that
+have a category of `biography`. Nice!
