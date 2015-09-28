@@ -4,6 +4,8 @@
 ### Splat operator
 This is one that takes getting used to: the * splat operator adds spice
 to methods and calls.
+The nice thing about it: We can create methods without having to specify
+the exact number of arguments they take.
 
 ``` ruby
 def say(what, *people)
@@ -119,4 +121,28 @@ More detailed example:
 [http://www.railway.at/articles/2008/09/20/a-guide-to-memoization/](Memo-what
 blog post)
 
-### Ahh, this is an emergency commit!!
+### Class and instance variables
+First up, let's look at the beauty of instance variables: The idea is
+that our `Halloween` class has a value for `date` attached. We can get
+there either by `attr_accessor`ing a `:date` attribute - this lets us
+get and set `@date` on `Halloween`. Yet, we can't just call
+`Halloween.date` - since `attr_accessor` creates methods only on
+instances of `Halloween`, we need to create a new one first and then
+assign `date` to it: `Halloween.new.date = today`.
+
+We can set the `attr_accessor` methods on the class level, as well:
+
+``` ruby
+class Halloween
+  require 'date'
+
+  class << self; attr_accessor :date end
+  @date = Date.new(2015,10,31)
+end
+
+puts Halloween.date # => Oct 31, 2015
+```
+
+If you're worrying about inheritable attributes, e.g. for a subclass
+that inherits from `Halloween`, then fret no more: Rails has features
+for that. (Possibly to be covered elsewhere.)
