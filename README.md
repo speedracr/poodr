@@ -164,3 +164,7 @@ end
 This way, calling `@books.all_from_category(:biography)` will take the
 `@books` array and return an array composed just of those books that
 have a category of `biography`. Nice!
+
+### Logs
+Easiest server log: ssh into server, then call `tail -f
+log/production.log` for production emails.
