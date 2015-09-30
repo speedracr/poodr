@@ -168,3 +168,13 @@ have a category of `biography`. Nice!
 ### Logs
 Easiest server log: ssh into server, then call `tail -f
 log/production.log` for production emails.
+
+### Truthy/falsey checks
+To build a condition resting on a boolean attribute being `true`, it's
+best to use a falsey check that works for all of `true`, `false` and
+`nil`:
+``` ruby
+def set_checkbox
+  unless @user.email_opt_out
+end
+```
