@@ -178,3 +178,26 @@ def set_checkbox
   unless @user.email_opt_out
 end
 ```
+
+### `remote: true`
+The idea behind a `link_to` helper that uses `remote: true`: Hit the
+designated controller action (you can even switch the HTTP method with
+`method: :patch` and JQueryUJS will swap it for you) and don't render a
+new page.
+In `routes.rb`, add a
+``` ruby
+resources foo do
+  member do
+    patch :activate
+  end
+end
+```
+
+In the controller, remove all `redirect_to` directives and leave only
+the actual change to the model you want to see. Lastly, set up a
+corresponding JS view for the controller action, in this case
+`activate.js.erb`. This will simply get loaded by JQuery UJS after it
+hit the controller - use this to simulate the on-page behavior you would
+have seen from having a new view rendered - `.hide()`, `.text('some
+text')` etc.
+Done!
