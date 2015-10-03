@@ -119,4 +119,8 @@ More detailed example:
 [http://www.railway.at/articles/2008/09/20/a-guide-to-memoization/](Memo-what
 blog post)
 
-### Ahh, this is an emergency commit!!
+### Class and instance variables
+So here is the short of it: We make an *instance* variable available
+
+### New topic
+through getter and setter via attr_accessor, as usualn. 
