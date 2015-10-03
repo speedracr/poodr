@@ -4,6 +4,8 @@
 ### Splat operator
 This is one that takes getting used to: the * splat operator adds spice
 to methods and calls.
+The nice thing about it: We can create methods without having to specify
+the exact number of arguments they take.
 
 ``` ruby
 def say(what, *people)
@@ -120,7 +122,82 @@ More detailed example:
 blog post)
 
 ### Class and instance variables
-So here is the short of it: We make an *instance* variable available
+First up, let's look at the beauty of instance variables: The idea is
+that our `Halloween` class has a value for `date` attached. We can get
+there either by `attr_accessor`ing a `:date` attribute - this lets us
+get and set `@date` on `Halloween`. Yet, we can't just call
+`Halloween.date` - since `attr_accessor` creates methods only on
+instances of `Halloween`, we need to create a new one first and then
+assign `date` to it: `Halloween.new.date = today`.
 
-### New topic
-through getter and setter via attr_accessor, as usualn. 
+We can set the `attr_accessor` methods on the class level, as well:
+
+``` ruby
+class Halloween
+  require 'date'
+
+  class << self; attr_accessor :date end
+  @date = Date.new(2015,10,31)
+end
+
+puts Halloween.date # => Oct 31, 2015
+```
+
+If you're worrying about inheritable attributes, e.g. for a subclass
+that inherits from `Halloween`, then fret no more: Rails has features
+for that. (Possibly to be covered elsewhere.)
+
+### Enumerables: `select`
+Or: How can I filter certain objects from an array?
+Imagine we have an array of books, all with a title, author and
+category. To go in and filter for a certain category, we can use the
+beauty of `select`:
+
+``` ruby
+def all_from_category category
+  @books.select do |book|
+    book.category == category
+  end
+end
+```
+
+This way, calling `@books.all_from_category(:biography)` will take the
+`@books` array and return an array composed just of those books that
+have a category of `biography`. Nice!
+
+### Logs
+Easiest server log: ssh into server, then call `tail -f
+log/production.log` for production emails.
+
+### Truthy/falsey checks
+To build a condition resting on a boolean attribute being `true`, it's
+best to use a falsey check that works for all of `true`, `false` and
+`nil`:
+``` ruby
+def set_checkbox
+  unless @user.email_opt_out
+end
+```
+
+### `remote: true`
+The idea behind a `link_to` helper that uses `remote: true`: Hit the
+designated controller action (you can even switch the HTTP method with
+`method: :patch` and JQueryUJS will swap it for you) and don't render a
+new page.
+In `routes.rb`, add a
+``` ruby
+resources foo do
+  member do
+    patch :activate
+  end
+end
+```
+
+In the controller, remove all `redirect_to` directives and leave only
+the actual change to the model you want to see. Lastly, set up a
+corresponding JS view for the controller action, in this case
+`activate.js.erb`. This will simply get loaded by JQuery UJS after it
+hit the controller - use this to simulate the on-page behavior you would
+have seen from having a new view rendered - `.hide()`, `.text('some
+text')` etc.
+Done!
