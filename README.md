@@ -201,3 +201,14 @@ hit the controller - use this to simulate the on-page behavior you would
 have seen from having a new view rendered - `.hide()`, `.text('some
 text')` etc.
 Done!
+
+### Ruby enumerables
+Check separate folder for more details.
+In short:
+* `map`
+`map` is a function that builds a new array. It then takes each element
+of the provided array, applies the provided block to it and inserts the
+return value of that particular element into the new array.
+
+* `select` adds an additional check to `map` to see whether the return
+  value is `true`. Only `true` values get added to the arrayich im Kalender an.
