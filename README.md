@@ -212,3 +212,38 @@ return value of that particular element into the new array.
 
 * `select` adds an additional check to `map` to see whether the return
   value is `true`. Only `true` values get added to the arrayich im Kalender an.
+
+### Procs and lambdas
+The basic idea: Pass around anonymous chunks of code in your
+application, i.e. we're not defining an entire class or method here.
+
+Procs get executed and return their result, which will even
+override a wrapping method that calls the proc and follows up with a
+`return` of its own - if the proc works, the proc return will be all
+that's seen from the method.
+
+Lambdas are less forgiving: Pass in more arguments than specified to a
+proc and it will still return the result for however many arguments you
+specified and discard the surplus. A lambda will raise an exception much like
+a method and complain that you passed in the wrong number of arguments.
+On the flipside, the lambda is just going to run in the order of things
+and the wrapping code will continue afterwards.
+
+Or put differently: `proc` behaves like a block, `lambda` behaves like a
+method.
+
+Also note that the `|a|` part in blocks or procs is actually the
+argument(s) we're passing into the block.
+
+Calling a proc works in different ways:
+``` ruby
+my_proc = proc do |a|
+  puts "This is my proc and #{a} was passed to me."
+end
+
+my_proc.call(10)
+my_proc.(20)
+my_proc[30]
+my_proc === 40
+```
+all work with the same effect.
