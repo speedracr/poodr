@@ -247,3 +247,36 @@ my_proc[30]
 my_proc === 40
 ```
 all work with the same effect.
+
+### STILL TO-DO
+Teaching: The basics of programming always work well in combination with
+context information on web servers, browsers, debugging.
+
+After the first tries of running Ruby, a good next step is likely two
+units on Ruby basics:
+(1) on enumerables - getting everyone familiar with
+creating and handling arrays and hashes in a practical context. Also:
+possibly explain the use cases for methods, procs and lambdas (in a
+beginner-friendly way).
+(2) Ruby/ programming foundations: Why do we use classes? How do we use
+them? What's the deal with methods, procs and lambdas? (But explain
+inversely: "Let's make a method-like code block to do X. (...) OK, that
+was a lambda!")
+(3) handling file operations: Open an index.html file, add stuff to it,
+write and save again. Serve HTML with Python server.
+Bonus: Use Sinatra and the Twitter gem to get actual content into the
+application.
+Bonus 2: json and Yaml as file formats.
+
+Additional ground work:
+(4) working with git and GitHub, including pull requests and feature
+branches
+(5) command-line basics: `cd`, `mv`, `mkdir`, `touch`, `vim`, `pwd`.
+
+Question: TDD could be interesting at this point to get the concept
+across.
+
+Progression: Either Sinatra with subfolders and then on to Rails or
+directly into Rails.
+On foundations: Go deeper into best practices of OOD, instance vs. class
+methods.
