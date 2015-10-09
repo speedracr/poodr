@@ -1,5 +1,14 @@
 # Here be object-oriented code.
 
+## Command-line
+List files: with `ls -lh`, CLI will list out all files and directories,
+include detailed info and display file sizes in human readable format.
+`ls -1` simply lists out all elements on new lines.
+
+Find files: `find . -name '*.html'`
+In detail: specify the directory (optionally), pass in `-name` and
+argument, ideally escaped to unconfuse the CLI.
+
 ## Ruby-related
 ### Splat operator
 This is one that takes getting used to: the * splat operator adds spice
@@ -248,6 +257,9 @@ my_proc === 40
 ```
 all work with the same effect.
 
+### Procs, blocks, lambdas, continued
+
+
 ### STILL TO-DO
 Teaching: The basics of programming always work well in combination with
 context information on web servers, browsers, debugging.
@@ -265,16 +277,22 @@ was a lambda!")
 (3) handling file operations: Open an index.html file, add stuff to it,
 write and save again. Serve HTML with Python server.
 Bonus: Use Sinatra and the Twitter gem to get actual content into the
-application.
+application. (Explain gem concept and `require ./`)
 Bonus 2: json and Yaml as file formats.
 
 Additional ground work:
 (4) working with git and GitHub, including pull requests and feature
 branches
-(5) command-line basics: `cd`, `mv`, `mkdir`, `touch`, `vim`, `pwd`.
+(5) command-line basics: `cd`, `mv`, `mkdir`, `touch`, `cat`, `nano`/ `vim`,
+`pwd`,  and
+`bash` aliases (- do these work on Windows?)
 
 Question: TDD could be interesting at this point to get the concept
 across.
+
+Intermediate: HTML/CSS, combined with SCSS via `compass`. Explain HTML5
+and CSS3 as concepts. Introduce Foundation/ Bootstrap frameworks for
+faster results.
 
 Progression: Either Sinatra with subfolders and then on to Rails or
 directly into Rails.
