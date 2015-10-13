@@ -298,3 +298,15 @@ Progression: Either Sinatra with subfolders and then on to Rails or
 directly into Rails.
 On foundations: Go deeper into best practices of OOD, instance vs. class
 methods.
+
+### Rspec / testing debug
+Easy approach: add `pry` to Gemfile and set `binding.pry` within the
+spec.
+But what can we do when that doesn't catch the slipup? Watching the logs
+is our way out:
+* Open up a separate tab
+* `tail -f log/test.log` to tail/follow the test.log file
+
+Now, run the test again in the first tab and we'll see the entire server
+log for our test, including possible errors like insufficient
+permissions.
