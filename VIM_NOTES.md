@@ -13,6 +13,9 @@ Switch off highlighting after search: <leader>h > s
 On a file name: g-f will *go* to *file*
 Go back: Ctrl-Shift-^ (Ctrl-~) or Ctrl-O
 Go forward: Ctrl-I (inverse of Ctrl-O)
+List all files in a directory: Select file in NERDTree, then `:e` +
+`Ctrl-p` to paste in the current directory. Enter and voila, the file
+list appears in the main window.
 
 ## Text manipulation
 ddp: delete line, then insert below (swaps lines)
