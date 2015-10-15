@@ -19,3 +19,9 @@ select individual "hunks" of code to be added to the index; the
 remainder stays unstaged and we can `git stash branch` them out
 afterwards.
 
+## Exclude files
+Well, there is `.gitignore`. For even more, check out the
+`.git/info/excludes` file in your repository - excellent to add a
+configuration that isn't mirrored back to remote.
+Thirdly, `.gitconfig` in the home directory lets you set a global
+`~/.gitignore` with files to always exclude from git management.
