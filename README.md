@@ -310,3 +310,8 @@ is our way out:
 Now, run the test again in the first tab and we'll see the entire server
 log for our test, including possible errors like insufficient
 permissions.
+
+### Sys admin
+To find out which unix group you belong to: `id [username]` will list
+them all out. For instance, for Docker, it makes sense to add the
+current user to the Docker usergroup, as well.
