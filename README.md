@@ -315,3 +315,9 @@ permissions.
 To find out which unix group you belong to: `id [username]` will list
 them all out. For instance, for Docker, it makes sense to add the
 current user to the Docker usergroup, as well.
+
+To add yourself to a group: `usermod -G
+all,of,your,groups,incl,existing,ones` or on Ubuntu: `adduser [username]
+[groupname]`.
+
+To join a group without logging out and back in: `newgrp [groupname]`
