@@ -46,6 +46,13 @@ a = *(1..3)   # [1,2,3]
 Further reading:
 [https://4loc.wordpress.com/2009/01/16/the-splat-operator-in-ruby/]
 
+### Mini Ruby: `squish`
+Takes a number of concatenated strings or an array, removes whitespace
+on both ends and returns a single string. Also replaces any 2+
+character-whitespaces with single-character whitespace - in short, turns
+a number of arguments into a string that is optimized for being
+displayed to the user.
+
 ### Enumerables
 The work horse, so read up on this isht.
 
