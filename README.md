@@ -9,6 +9,9 @@ Find files: `find . -name '*.html'`
 In detail: specify the directory (optionally), pass in `-name` and
 argument, ideally escaped to unconfuse the CLI.
 
+## Bundle / devops
+`bundle outdated` lists all outdated gems (without making changes).
+
 ## Ruby-related
 ### Splat operator
 This is one that takes getting used to: the * splat operator adds spice
