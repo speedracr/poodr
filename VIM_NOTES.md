@@ -45,3 +45,10 @@ screen
 Remap save action to double; : `noremap ;; :update<CR>`
 Remap ESC action to jj in insert mode: `imap jj <ESC>`
 
+## Search and replace
+File search: If you have `ack` installed, then <Leader> `f` will bring
+up a file search box.
+Search for a string and replace:
+`:s/search` on current line
+`:%s/search` in the whole document
+`:%s/search/replace/g` updates all occurences in the document

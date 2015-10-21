@@ -3,19 +3,36 @@
 OK, what do I know so far?
 * I know a little about relational databases (- what? There are
   others?!?)
-* Turns out, RDBs aren't that efficient once you start referencing other
+* Turns out, RDBMs aren't that efficient once you start referencing other
   tables via foreign keys: a TV show has many seasons, a season has many
   episodes, an episode has many actors and -boom- we're at a four table
   join.
 * Instead, we can NoSQL this and use a document-based DB like MongoDB.
 
 Question marks:
-* Apparently, RDBs take a long time to **denormalize** data. What
+* Apparently, RDBMs take a long time to **denormalize** data. What
   exactly is that and why is it necessary? And why is Mongo that much
   faster?
 * Under which circumstances would I go for something like Mongo? And how
   do I implement it exactly? (OK, Mongoid seems a good first start.)
 * (A) Create an example app that uses Mongo for something.
+
+## Intro
+MongoDB: we are storing data in a way that is suited to the application
+we're working on! Whereas RDBMs are application-agnostic.
+
+Haha: MongoDB does not support joins in the kernel and uses a rich
+document-style of storing data. In consequence, instead of joining
+tables when querying, we can pre-join data (via our specific schema)
+beforehands and/or combine/join collections within our application after
+the query.
+Useful knowledge bit: joins are compute-intensive, so the less we need,
+the better.
+
+Haha, 2: we don't have constraints like we do with foreign keys in RDBMs.
+And: there are no transactions in the MongoDB world!! Instead, we use
+**atomic operations**. And: we don't declare a schema, but have an
+implicit one through the individual setup of MongoDB.
 
 ## Links
 http://www.25hoursaday.com/weblog/2009/09/10/BuildingScalableDatabasesDenormalizationTheNoSQLMovementAndDigg.aspx
