@@ -9,6 +9,10 @@ Find files: `find . -name '*.html'`
 In detail: specify the directory (optionally), pass in `-name` and
 argument, ideally escaped to unconfuse the CLI.
 
+`curl`: to download a file, do a `curl
+https://my.file.tld/file.name > this_is_the_local_file.name` and curl
+will download the file in question.
+
 ## Bundle / devops
 `bundle outdated` lists all outdated gems (without making changes).
 

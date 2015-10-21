@@ -17,7 +17,35 @@ Question marks:
   do I implement it exactly? (OK, Mongoid seems a good first start.)
 * (A) Create an example app that uses Mongo for something.
 
-## Intro
+## Database background
+RDBMs are really into normalizing data, whose benefits are apparent when
+you consider it: if we also attach a production company to our TV shows
+and need to update, let's say, the company address, we would need to go
+into every TV show of that particular company and update its address.
+Instead, we create a table for production companies and store the
+address just once. (In turn, this creates the table join issue, as we
+need to **denormalize** again for certain queries where we want to have
+both the production company and the TV show present. (Or put
+differently, "Denormalization is bringing together different attributes
+of a single record, so that all attributes of an entity are easily
+accessible in one read. ")
+
+### 3NF / third normal form
+The idea of 3NF is that every non-key attribute of a particular table
+provides a fact about the key, the whole key and nothing but the key. In
+our TV show example, storing the production company's address in the TV
+show table clearly violates that.
+
+### Normalization
+Apart from taking out anomalies when modifying records (most easily by
+carrying around duplicates!, which we eliminate through normalization), normalization
+also makes it easier to extend the schema and more importantly, keeps
+the application free from a bias toward a particular data access
+pattern. This last one is a rule that we move away from when using
+MongoDB. (Still, we like being flexible and would prefer to not have
+modification anomalies.)
+
+## MongoDB to the rescue
 MongoDB: we are storing data in a way that is suited to the application
 we're working on! Whereas RDBMs are application-agnostic.
 

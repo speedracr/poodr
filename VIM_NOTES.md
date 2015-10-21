@@ -52,3 +52,7 @@ Search for a string and replace:
 `:s/search` on current line
 `:%s/search` in the whole document
 `:%s/search/replace/g` updates all occurences in the document
+> `g` meaning "global", i.e. all occurences will also be replaced.
+> `gc` will ask for confirmation
+> `gi` will make the operation case insensitive
+> `gI` will make the operation case sensitive
