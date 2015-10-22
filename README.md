@@ -13,6 +13,12 @@ argument, ideally escaped to unconfuse the CLI.
 https://my.file.tld/file.name > this_is_the_local_file.name` and curl
 will download the file in question.
 
+`ln -s`: symlink, creates a wormhole between an actual file and its
+representation in a totally different location. The beauty: file is
+being updated in the original location > change propagates to symlink,
+as well, and the symlink can even be tracked by git and be included in a
+repo. Syntax: `ln -s source/file.name my-symlink-file.name`
+
 ## Bundle / devops
 `bundle outdated` lists all outdated gems (without making changes).
 
