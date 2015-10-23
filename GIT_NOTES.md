@@ -25,3 +25,12 @@ Well, there is `.gitignore`. For even more, check out the
 configuration that isn't mirrored back to remote.
 Thirdly, `.gitconfig` in the home directory lets you set a global
 `~/.gitignore` with files to always exclude from git management.
+
+## reverting commits
+`git reset HEAD^` will revert to the previous commit and is the
+equivalent of `git reset HEAD~1`. `git reset HEAD~2`
+and so on will go back further.
+When pushing a reverted branch back to remote (i.e., the new version
+that we reverted from is already on remote), remote will reject this
+push since it's less current than what it already has. The solution:
+`git push -f` will force push the commit and reset remote, as well.

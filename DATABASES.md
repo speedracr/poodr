@@ -38,9 +38,9 @@ show table clearly violates that.
 
 ### Normalization
 Apart from taking out anomalies when modifying records (most easily by
-carrying around duplicates!, which we eliminate through normalization), normalization
-also makes it easier to extend the schema and more importantly, keeps
-the application free from a bias toward a particular data access
+carrying around duplicates!, which we eliminate through normalization),
+normalization also makes it easier to extend the schema and more importantly,
+keeps the application free from a bias toward a particular data access
 pattern. This last one is a rule that we move away from when using
 MongoDB. (Still, we like being flexible and would prefer to not have
 modification anomalies.)
@@ -56,11 +56,18 @@ beforehands and/or combine/join collections within our application after
 the query.
 Useful knowledge bit: joins are compute-intensive, so the less we need,
 the better.
+Correlary: If you find your MongoDB schema design resembles an RDBMS
+where you are ducktaping together a bunch of collections to get a
+join-like behavior, you're doing it wrong - you'd be better off
+switching to an actual RDBMS instead.
 
 Haha, 2: we don't have constraints like we do with foreign keys in RDBMs.
 And: there are no transactions in the MongoDB world!! Instead, we use
 **atomic operations**. And: we don't declare a schema, but have an
 implicit one through the individual setup of MongoDB.
+
+## MongoDB, cont'd
+When you are 
 
 ## Links
 http://www.25hoursaday.com/weblog/2009/09/10/BuildingScalableDatabasesDenormalizationTheNoSQLMovementAndDigg.aspx
