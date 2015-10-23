@@ -67,7 +67,14 @@ And: there are no transactions in the MongoDB world!! Instead, we use
 implicit one through the individual setup of MongoDB.
 
 ## MongoDB, cont'd
-When you are 
+When you are tying together collections to reference distributed data,
+it is up to you to make sure the 'foreign key' is correct - Mongo will
+not check whether it is correct, or more formally: Mongo does not have a
+foreign key constraint the way that an RBDMS would.
+
+Instead, Mongo lets you **embed** data: When you store comments for a
+blog posts, you can embed the actual comments in the blog post
+collection, thereby making sure every comment is at its place.
 
 ## Links
 http://www.25hoursaday.com/weblog/2009/09/10/BuildingScalableDatabasesDenormalizationTheNoSQLMovementAndDigg.aspx
