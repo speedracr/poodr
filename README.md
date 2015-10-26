@@ -22,6 +22,11 @@ repo. Syntax: `ln -s source/file.name my-symlink-file.name`
 ## Bundle / devops
 `bundle outdated` lists all outdated gems (without making changes).
 
+Deploying workflow: Make sure `production` is ready in a CI-tested
+version!!! Steps: come into office, merge master into production, push
+production and wait for it to go green! Then, deploying to production is
+a matter of single minutes, not 15+min.
+
 ## Ruby-related
 ### Splat operator
 This is one that takes getting used to: the * splat operator adds spice
