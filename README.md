@@ -357,3 +357,4 @@ Master move: go back to the directory you were previously in with `cd
 Zipping up files: `zip myzipfile.zip firstfile.foo secondfile.bar` will
 zip up individual files. `zip -r myzippedfolder.zip` zips up the entire
 folder. Copy to public folder and download.
+Unzip: `unzip myzipfile.zip`
