@@ -351,6 +351,8 @@ To join a group without logging out and back in: `newgrp [groupname]`
 Check out file sizes in directories: `du -ah` will show `disk usage` in
 `human` readable form for `all` files.
 
+File size on system level: `df -h` in root.
+
 Master move: go back to the directory you were previously in with `cd
 -`. Magic!
 
