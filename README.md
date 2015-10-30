@@ -360,3 +360,57 @@ Zipping up files: `zip myzipfile.zip firstfile.foo secondfile.bar` will
 zip up individual files. `zip -r myzippedfolder.zip` zips up the entire
 folder. Copy to public folder and download.
 Unzip: `unzip myzipfile.zip`
+
+### File manipulation and creation and manual CSV parsing
+The basis: an XLS file that we convert to CSV.
+Our goal: parse the file into a handy-dandy array, then use the array
+for more fun.
+
+Step one:
+``` ruby
+array = []
+file = File.open('myfile.csv', 'r') // for read-only access
+  `file.each_line do |line|
+  array << line.chomp.split
+end
+```
+
+We can add some more Ruby magic to the processing line along the lines
+of `line.split.map(&:to_i)` (- remember how `map` is basically the
+super-code to apply a certain operation on each element as we cycle
+through the block), or `line.split(";")[1]` to first split elements of
+each line into sub-arrays and then only select the second element of
+that array.
+
+Step two:
+If need be, we can clean up our array and remove, for example, a
+trailing ";" on each element:
+``` ruby
+new_array = []
+array.each do |a|
+  new_array << a[0..-1]
+end
+```
+
+Step three:
+Transfer the file using `scp`: `scp myfile.name production:folder/`.
+
+Step four:
+Now reparse the file into an array and make use of it. To recreate a new
+CSV from scratch, start with an empty string that we'll fill manually.
+
+``` ruby
+data = ""
+array.each do |element|
+  user = User.find_by(id: element)
+  data << "#{user.name};#{user.email}\n"
+end
+```
+
+Step five:
+Take the string and write to file:
+``` ruby
+file = File.open('myexportfile.name', 'w') { |myfile| myfile << data }
+```
+and `scp` the bad boy back to local.
+Done!
