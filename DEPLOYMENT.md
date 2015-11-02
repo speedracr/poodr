@@ -24,3 +24,15 @@ Much better though to set it up alongside nginx in production!
 
 Features: Passenger will automatically start new processes to handle a
 large number of requests.
+
+### nginx configuration
+To restart nginx, run `sudo service nginx restart`.
+
+### SSH keys
+For the deploy, we'll want to have the server pull the latest version from GitHub.
+Two ways to authenticate:
+(1) Generate SSH keys on the server. Low friction and not an issue if
+we're the only ones with access to the server.
+(2) Pipe our own SSH keys to the server when logging in. For that, use
+`ssh user@server.address -A` et voila, your local keys become available
+on the remote host.
