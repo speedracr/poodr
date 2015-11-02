@@ -36,3 +36,7 @@ we're the only ones with access to the server.
 (2) Pipe our own SSH keys to the server when logging in. For that, use
 `ssh user@server.address -A` et voila, your local keys become available
 on the remote host.
+
+### User management
+Each app should have its own owner. Should that user need `sudo` rights,
+you can add them using `sudo usermod -aG sudo <username>`.
