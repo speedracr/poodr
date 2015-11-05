@@ -414,3 +414,8 @@ file = File.open('myexportfile.name', 'w') { |myfile| myfile << data }
 ```
 and `scp` the bad boy back to local.
 Done!
+
+## Serving HTML locally
+Intricate route: Use `gulp` to preprocess files.
+Easy way: start a local webserver in Python `python -m SimpleHTTPServer`
+or Ruby `ruby -run -e httpd . --port=1337`.
