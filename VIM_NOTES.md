@@ -16,6 +16,8 @@ Go forward: Ctrl-I (inverse of Ctrl-O)
 List all files in a directory: Select file in NERDTree, then `:e` +
 `Ctrl-p` to paste in the current directory. Enter and voila, the file
 list appears in the main window.
+Auto-format mangled up text (e.g. crazy indentations): mark up lines and
+then hit `=` - voila, all nicely formatted..
 
 ## Text manipulation
 ddp: delete line, then insert below (swaps lines)
