@@ -24,6 +24,8 @@ ddp: delete line, then insert below (swaps lines)
 ddP: delete line, then insert above
 Shift-a, Shift-i Shift-0: insert text before first/ last character of
 line
+Switch to uppercase/lowercase: Mark up text in visual mode, then `u` for
+downcase or `U` for upcasing the selected text.
 
 ## Registers
 in general: regs save all snipped text, can be inserted via "[register]p
