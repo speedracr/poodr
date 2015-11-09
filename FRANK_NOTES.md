@@ -14,3 +14,7 @@ schreiben will? Woher kommt `and_call_original`? Wann nutze ich
 (1) Ich will einen Worker specen. Here is what to do: ...
 (2) Ich will das Erstellen eines Nutzers specen. Here is what to do:
 ...
+
+## shell
+Wie öffne ich verschiedene "Tabs" in der Shell? (statt guake tabs)
+vim registers: Worum geht's da? (ggf. selbst recherchieren)
