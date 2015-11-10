@@ -12,6 +12,8 @@ argument, ideally escaped to unconfuse the CLI.
 `curl`: to download a file, do a `curl
 https://my.file.tld/file.name > this_is_the_local_file.name` and curl
 will download the file in question.
+To test a connection, simply `curl -i foo.bar:1337` - this will return
+the server response.
 
 `ln -s`: symlink, creates a wormhole between an actual file and its
 representation in a totally different location. The beauty: file is
