@@ -1,5 +1,9 @@
 # Questions and topics for weekly review
 
+## DONE THIS WEEK
+* cVim for Chrome
+* vim tabs - useful?
+
 ## Switching to `use_cases`
 "Wir wollen guard clauses und hooks aus den AASM state changes
 herausziehen und auch keine `active_record` before/ after actions mehr
