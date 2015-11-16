@@ -3,6 +3,7 @@
 ## DONE THIS WEEK
 * cVim for Chrome
 * vim tabs - useful?
+* zsh!
 
 ## Switching to `use_cases`
 "Wir wollen guard clauses und hooks aus den AASM state changes
