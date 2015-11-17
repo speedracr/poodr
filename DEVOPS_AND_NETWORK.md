@@ -9,3 +9,9 @@ On a fresh install, this will get you going:
 install sudo`.
 * add user with root privileges (which again you can summon with `su -`
   or `sudo` when needed): `adduser [username] sudo` 
+
+## Network jiujitus
+Unix machines:
+`traceroute www.foo.bar` will trace-route the request.
+`host www.foo.bar` will resolve the URL and shows both the actual IP
+server address and possible aliases.
