@@ -29,3 +29,8 @@ vim registers: Worum geht's da? (ggf. selbst recherchieren)
 Zusammenhang noch nicht verstanden habe - was sind meine Optionen, wie
 gehe ich durch die einzelnen Schritte? (Ich will X testen, Ich will Y
 testen, Ich will Z testen. >> Ich baue A, Ich baue B, Ich baue C)
+
+## Notes on learning
+Ich merke, dass eine Nachmittags-Einheit für den Flow schlecht ist -
+oftmals war es in letzter Zeit so, dass ab ca. 15.30/16.00 alles etwas
+ruhiger wurde und ich perfekt an den Tickets arbeiten konnte.
