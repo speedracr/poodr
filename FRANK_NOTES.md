@@ -4,6 +4,7 @@
 * cVim for Chrome
 * vim tabs - useful?
 * zsh!
+* Ops Themen: Surveygizmo, Participation-ID-List Parser
 
 ## Switching to `use_cases`
 "Wir wollen guard clauses und hooks aus den AASM state changes
