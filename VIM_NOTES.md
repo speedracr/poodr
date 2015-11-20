@@ -18,6 +18,8 @@ List all files in a directory: Select file in NERDTree, then `:e` +
 list appears in the main window.
 Auto-format mangled up text (e.g. crazy indentations): mark up lines and
 then hit `=` - voila, all nicely formatted..
+Search for word under cursor: `Ctrl-*` highlights all occurrences of the
+word.
 
 ## Text manipulation
 ddp: delete line, then insert below (swaps lines)
