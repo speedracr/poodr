@@ -424,3 +424,5 @@ or Ruby `ruby -run -e httpd . --port=1337`.
 
 ## Tools
 To copy command line output to the system clipboard, install `xclip`. Then, by calling `xclip -sel clip < my/file.name`, you can copy the output of that file to the clipboard.
+
+What is that? An emergency commit? Sure looks like it.
