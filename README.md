@@ -424,3 +424,18 @@ or Ruby `ruby -run -e httpd . --port=1337`.
 
 ## Tools
 To copy command line output to the system clipboard, install `xclip`. Then, by calling `xclip -sel clip < my/file.name`, you can copy the output of that file to the clipboard.
+
+## Quirky thing: `heredoc`
+Ruby allows for the creation of multi-line string objects with
+`heredocs`. This is how it's done:
+``` ruby
+my_string = <<FOO
+This is a string \nwith many lines
+even spanning across
+\tmultiple tabs.
+FOO
+```
+
+In other words, Ruby is going to read all lines into the string
+(including indentation) until it sees the next occurence of the keyword
+of your choosing (`FOO`).
