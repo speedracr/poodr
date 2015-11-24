@@ -249,6 +249,17 @@ return value of that particular element into the new array.
 * `select` adds an additional check to `map` to see whether the return
   value is `true`. Only `true` values get added to the arrayich im Kalender an.
 
+#### Array manipulation
+* Create an array the easy way: `my_array = %w(foo bar baz) # ["foo",
+  "bar", "baz"]`
+
+* Take out one item after another, from the start:
+  `my_array.shift # foo` (removes that item from the array permanently!)
+
+* Take out one item after another, from the end:
+  `my_array.pop # baz` (also removes that item permanently!)
+
+
 ### Procs and lambdas
 The basic idea: Pass around anonymous chunks of code in your
 application, i.e. we're not defining an entire class or method here.
