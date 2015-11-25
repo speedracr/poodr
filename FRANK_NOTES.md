@@ -1,10 +1,29 @@
 # Questions and topics for weekly review
 
 ## DONE THIS WEEK
-* cVim for Chrome
-* vim tabs - useful? Anyway: already using them!
-* zsh!
-* Ops Themen: Surveygizmo, Participation-ID-List Parser
+* more ticket work - hooray!
+* little confusion
+* Linux admin/ Wifi card installed
+* tried out Slack, Imgur gems
+
+## Ruby mindf
+How does this work from `/lib/append/core_ext/array/append.rb`:
+
+``` ruby
+class Array
+  def sum_with_nils
+    if self[0].is_a? Array
+      map(&:sum_with_nils).sum_with_nils
+    else
+      reduce(0) { |a, e| a + (e || 0) }
+    end
+  end
+# ....
+end
+```
+(found via Coveralls)
+
+We are calling... a method on itself, chained to a call to itself?
 
 ## Switching to `use_cases`
 "Wir wollen guard clauses und hooks aus den AASM state changes
