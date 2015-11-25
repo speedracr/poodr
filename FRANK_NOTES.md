@@ -25,6 +25,18 @@ end
 
 We are calling... a method on itself, chained to a call to itself?
 
+## Strategic question
+Looks to me like we increasingly duct-tape features to the duct-tape.
+Yet, even though a JS-focused front-end (cf. WordPress Calypso) may
+actually help us immensely, we wouldn't have the ability to pause
+feature development for 2-4 months, would we? Is there input/ opinion on
+this from the company leadership? Or does it just get pushed back on the
+assumption that 'it'll work out when it'll work out'?
+cf. LinkedIn CTO pausing feature development 6 months after the IPO to
+"revamp" the architecture.
+
+-------------
+
 ## Switching to `use_cases`
 "Wir wollen guard clauses und hooks aus den AASM state changes
 herausziehen und auch keine `active_record` before/ after actions mehr
