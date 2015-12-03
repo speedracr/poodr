@@ -6,6 +6,17 @@
 * Linux admin/ Wifi card installed
 * tried out Slack, Imgur gems
 
+
+## QUESTIONS
+* OAuth flow: built a little application, only slight issue was around
+  callback URLs with Heroku. Then added user info storing and ran local
+  server - would have expected Twitter to refuse the callback but it
+  came back no worries to `localhost`, even though (functioning)
+  callback URL in settings was for `heroku`. So how exactly does OAuth
+  callback work???
+
+-------------
+
 ## Ruby mindf
 How does this work from `/lib/append/core_ext/array/append.rb`:
 
@@ -24,6 +35,12 @@ end
 (found via Coveralls)
 
 We are calling... a method on itself, chained to a call to itself?
+Turns out: We sort of are! The essential part here is the `else` loop
+but in case we're passing a nested array to the function, the `if` part
+will first jump in and reduce it down one step. If we're still at a
+nested array, a second time etc., until we are left with a nice and
+shiny unnested array that then gets the sum of its elements added to it.
+(This function takes heavy inspiration from functional programming.)
 
 ## Strategic question
 Looks to me like we increasingly duct-tape features to the duct-tape.
@@ -34,8 +51,6 @@ this from the company leadership? Or does it just get pushed back on the
 assumption that 'it'll work out when it'll work out'?
 cf. LinkedIn CTO pausing feature development 6 months after the IPO to
 "revamp" the architecture.
-
--------------
 
 ## Switching to `use_cases`
 "Wir wollen guard clauses und hooks aus den AASM state changes
