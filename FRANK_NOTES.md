@@ -15,6 +15,10 @@
   callback URL in settings was for `heroku`. So how exactly does OAuth
   callback work???
 
+* Performance diagnostics: How do I find out why Projects#index,
+  Wave#create feel slow? New Relic shows many DB hits, but is that
+  avoidable?
+
 -------------
 
 ## Ruby mindf
