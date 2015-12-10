@@ -19,6 +19,9 @@
   Wave#create feel slow? New Relic shows many DB hits, but is that
   avoidable?
 
+* Internal logging: Do we track how long QC samples take? Might be
+  interesting to see all sampling jobs > 10min for example.
+
 -------------
 
 ## Ruby mindf
