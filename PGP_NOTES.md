@@ -22,6 +22,22 @@ decrypt on the fly.
 ### Generate a public key file
 `gpg --armor --export email@address/ UID > file.name.asc`
 
+### Export private key(!!)
+tbc
+
+### Add email address to key file
+```
+gpg --edit-key [key_id]
+gpg> adduid
+[enter information]
+
+#optional: add trust level to email
+gpg> uid [uid]
+gpg> trust
+
+gpg> save
+```
+
 ### Import a public key
 `gpg --import file.name.asc`
 
