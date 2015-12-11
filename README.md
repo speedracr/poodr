@@ -73,6 +73,13 @@ character-whitespaces with single-character whitespace - in short, turns
 a number of arguments into a string that is optimized for being
 displayed to the user.
 
+### Mini Ruby: `select`
+To pick out only certain values in an array, use `select`: `results =
+array.select(status: "completed")`
+
+For uniqueness: `results.uniq.count` will count out all individual
+values, ignoring multiple occurences of the same value.
+
 ### Enumerables
 The work horse, so read up on this isht.
 
