@@ -22,6 +22,10 @@
 * Internal logging: Do we track how long QC samples take? Might be
   interesting to see all sampling jobs > 10min for example.
 
+* How do I make the most out of my log file? Sure I can `tail -f
+  sidekiq.log`, but if I'm interested in a certain JID or want to see if
+  a particular worker caused errors over the weekend, what do I do then?
+
 -------------
 
 ## Ruby mindf
