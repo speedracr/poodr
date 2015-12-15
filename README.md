@@ -21,6 +21,16 @@ being updated in the original location > change propagates to symlink,
 as well, and the symlink can even be tracked by git and be included in a
 repo. Syntax: `ln -s source/file.name my-symlink-file.name`
 
+Quick-create files with `cat`:
+```
+$ cat > mynewfile.txt
+Hello, this is text I am entering on the command line.
+I can line-break
+like I want. Eventually, I just hit <Ctrl-D> and my
+file gets saved.
+<Ctrl-D>
+```
+
 ## Bundle / devops
 `bundle outdated` lists all outdated gems (without making changes).
 
