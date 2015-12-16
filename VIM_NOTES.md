@@ -7,7 +7,7 @@ Leader-b: show recently opened files
 (Leader-)s: open file from NERDTree in new vsplit
 Ctrp-p: index all files, then magic search for file names
 Search for a text pattern in currently open files: /[foo]
-Switch off highlighting after search: <leader>h > s
+Switch off highlighting after search: <leader> hs
 
 ## Power moves
 On a file name: g-f will *go* to *file*
