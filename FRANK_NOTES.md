@@ -6,6 +6,15 @@
 * Linux admin/ Wifi card installed
 * tried out Slack, Imgur gems
 
+## Heroku
+Add-on pricing looks... interesting:
+
+* Postgres: continuous protection starts at $50/month (cheaper: $9/
+  month for expanded hobby DB without extended backup - would have to
+  backup w/ handrolled Postgres.dump for up-to-the-minute backup)
+* Hobby dyno (never sleeps): $7/ month; standard dyno: $25/month
+* SSL encryption: $20/month plus certificate
+* NewRelic standard: free, advanced: from $49/month
 
 ## QUESTIONS
 * OAuth flow: built a little application, only slight issue was around
