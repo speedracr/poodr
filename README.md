@@ -467,3 +467,12 @@ FOO
 In other words, Ruby is going to read all lines into the string
 (including indentation) until it sees the next occurence of the keyword
 of your choosing (`FOO`).
+
+### Sinatra tricks
+To run a Sinatra DIY console, start `irb` and if necessary pass in the
+load path. Example with `lib` as load path:
+``` ruby
+irb -I lib -r foo_api
+```
+will use `lib` as load path (i.e., the directory where `foo_api.rb`
+resides), and require `foo_api.rb` (!= `app.rb`!)
