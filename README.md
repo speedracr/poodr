@@ -391,6 +391,9 @@ zip up individual files. `zip -r myzippedfolder.zip` zips up the entire
 folder. Copy to public folder and download.
 Unzip: `unzip myzipfile.zip`
 
+### `mv`
+To move an entire folder: `mv -r` will allow for that.
+
 ### File manipulation and creation and manual CSV parsing
 The basis: an XLS file that we convert to CSV.
 Our goal: parse the file into a handy-dandy array, then use the array
@@ -476,3 +479,76 @@ irb -I lib -r foo_api
 ```
 will use `lib` as load path (i.e., the directory where `foo_api.rb`
 resides), and require `foo_api.rb` (!= `app.rb`!)
+
+## TDD
+### Mocks and stubs
+What is the difference? Going by the IBM text, we'll take a Christmas
+light as our analogy, one where at least one bulb is broken but we don't
+know which one - so we test:
+**Stubbing** our lightbulb would mean taking each one out of the chain
+and putting it into a simple battery-powered socket to see if the bulb lights
+up. Conceptually, we're replacing the complicated chain with a simpler
+environment that still lets us test the functionality of the single
+component (light bulb). If we take our analogy, then testing a class or
+component via stubbing means we're removing the client code underneath
+but preserve the interface (the light bulb still gets puts into the
+light socket).
+
+**Mocking**, not surprisingly, takes a different approach. In this case,
+we would take the light bulb and a voltmeter to test the bulb.
+Practically, we're taking the test to the next level by not only
+measuring if electricity flows through but additionally ensuring it's
+the right voltage. For a class or component, we might stub a database
+query by returning a fitting response and mock a database query by
+additionally ensuring that all associated queries are made and that the
+connection to the DB is closed at the end, for example.
+
+Effectively, a **stub** is all we need when we don't care _how_ the
+interface is used exactly. When we do care (and our test depends on the
+way that the interface is used), then we've found ourselves in mocking
+land.
+
+**Example**
+`document.rb`
+``` ruby
+class Document
+  def print
+    # doesn't matter, we're stubbing it out - yey!
+  end
+end
+
+class View
+  attr :document
+
+  def initialize(document)
+    @document = document
+  end
+
+  def print()
+    if document.print
+      puts "Excellent!"
+      true
+    else
+      puts "Bummer"
+      false
+    end
+  end
+end
+```
+
+Stubbing with Mocha or RSpec:
+`document_spec.rb`
+``` ruby
+require 'rspec'
+require 'mocha'
+require './document'
+
+class ViewTest < RSpec::Test
+  it 'returns false for failed prints' do
+    document.stub!(:print).and_return(false)
+    ui = View.new document
+    expect(ui.print).to be_false
+  end
+end
+```
+
