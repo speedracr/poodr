@@ -39,6 +39,10 @@ version!!! Steps: come into office, merge master into production, push
 production and wait for it to go green! Then, deploying to production is
 a matter of single minutes, not 15+min.
 
+## Environment
+To display all currently available environment variables, simply call `env`
+on the command line.
+
 ## Ruby-related
 ### Splat operator
 This is one that takes getting used to: the * splat operator adds spice
