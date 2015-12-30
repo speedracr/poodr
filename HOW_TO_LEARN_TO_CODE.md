@@ -34,3 +34,18 @@ what we need to cover:
   values and then play around with those. Structs, arrays, ... - all
   really valuable. Scraping web pages, creating files: yes, very much!
   (yml storage?)
+
+## Criteria
+Dilemma: to get to a solid skill level will take lots of practice,
+realistically only if that includes a period of full-time work. That
+then usually means you need (1) to be good enough to be hired as a
+developer and (2) have skills that are sought after on the market.
+Alternatively, you would probably budget 2-4 years of solid work on the
+side.
+
+Also, you'll want to learn stuff that (1) provides a resource-rich
+ecosystem, (2) and is future proof. Mostly because it's much more fun to
+work that way - for example, when taking part in a hackathon you don't
+want to be on the only team that uses .NET.
+
+Conclusion: Ruby, Swift, Node/JS would fit the bill.
