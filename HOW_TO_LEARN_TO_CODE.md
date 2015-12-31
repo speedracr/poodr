@@ -49,3 +49,14 @@ work that way - for example, when taking part in a hackathon you don't
 want to be on the only team that uses .NET.
 
 Conclusion: Ruby, Swift, Node/JS would fit the bill.
+
+## Additional workload
+You'll need to figure out how to set up, maintain and extend your
+development environment. Again, easier if you're working as part of a
+pro team, since any developer with 5+ years of experience will have
+figured out anything you'll need to know.
+
+If starting from scratch: indeed something like Mackenzie Child's setup
+videos can be a good start, although they'll likely carry you through
+not too much more than building your first few apps with 60% efficiency.
+Still, more than good enough for starters.
