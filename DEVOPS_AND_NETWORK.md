@@ -29,3 +29,7 @@ we can `eval` the command in our `.zshrc` like so:
 `eval "whoami && ruby -v"`
 In the case of `rbenv`, `eval "$(rbenv init -)"' apparently initializes
 `rbenv` and lets us use shims and autocomplete.
+
+## Re-login to shell
+Once you've updated your path, use `exec $SHELL --login` to load a new
+shell session using the new path setting.
