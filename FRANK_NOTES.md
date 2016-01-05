@@ -158,3 +158,13 @@ testen, Ich will Z testen. >> Ich baue A, Ich baue B, Ich baue C)
 Ich merke, dass eine Nachmittags-Einheit für den Flow schlecht ist -
 oftmals war es in letzter Zeit so, dass ab ca. 15.30/16.00 alles etwas
 ruhiger wurde und ich perfekt an den Tickets arbeiten konnte.
+
+## Pakete abschließen!!! Kniff: Pakete kleinhalten
+Dann ist es gar nicht schlimm, wenn Ruby 2.3.0 daher kommt, aber immer
+sicherstellen, dass das Neue irgendwann auch fertig ist und der alte
+Faden wieder gefunden wird. Und: Nicht 35 offene Sachen gleichzeitig zu
+haben ist immer gut.
+
+### Enumerable
+Vorgehen zB: Schritt 1 - was gibt es überhaupt an Methoden? Schritt 2 -
+Wie funktionieren die ersten 2, 3, 5 Methoden? etc.
