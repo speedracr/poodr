@@ -35,6 +35,24 @@ Add-on pricing looks... interesting:
   sidekiq.log`, but if I'm interested in a certain JID or want to see if
   a particular worker caused errors over the weekend, what do I do then?
 
+* Ruby-fu: I have an array of csv imported lines:
+```
+[PROD] (ec) [9] pry(main)> arr.first.split(";")
+=> ["550", "103692", "560e8ab570d6897f50005be9", "GEN25", "\n"]
+```
+
+and I want to assign each of those values to the same attribute on a
+Struct-based object:
+```
+[PROD] (ec) [7] pry(main)> class Record = Struct.new(:id, :serialno,
+:part_id, :value, :zipcode)
+[PROD] (ec) [7] pry(main)* end
+```
+
+Pretty sure there is a shorter way to iterate over the results of
+`foo.split(";")` and put them into a `Record.new` than `r.id = bar[0]`
+etc., right?
+
 -------------
 
 ## Ruby mindf
