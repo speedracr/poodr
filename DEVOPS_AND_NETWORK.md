@@ -29,3 +29,14 @@ we can `eval` the command in our `.zshrc` like so:
 `eval "whoami && ruby -v"`
 In the case of `rbenv`, `eval "$(rbenv init -)"' apparently initializes
 `rbenv` and lets us use shims and autocomplete.
+
+## Re-login to shell
+Once you've updated your path, use `exec $SHELL --login` to load a new
+shell session using the new path setting.
+
+### Docker and Postgres
+If the application can't connect to Postgres container
+("PG::ConnectionBad: could not connect to server: Connection refused")
+when running in `docker-compose up`: make sure `links` includes
+`postgresql` container, then throw-away running Docker containers of
+that app and restart them from scratch.

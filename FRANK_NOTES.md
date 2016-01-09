@@ -35,6 +35,24 @@ Add-on pricing looks... interesting:
   sidekiq.log`, but if I'm interested in a certain JID or want to see if
   a particular worker caused errors over the weekend, what do I do then?
 
+* Ruby-fu: I have an array of csv imported lines:
+```
+[PROD] (ec) [9] pry(main)> arr.first.split(";")
+=> ["550", "103692", "560e8ab570d6897f50005be9", "GEN25", "\n"]
+```
+
+and I want to assign each of those values to the same attribute on a
+Struct-based object:
+```
+[PROD] (ec) [7] pry(main)> class Record = Struct.new(:id, :serialno,
+:part_id, :value, :zipcode)
+[PROD] (ec) [7] pry(main)* end
+```
+
+Pretty sure there is a shorter way to iterate over the results of
+`foo.split(";")` and put them into a `Record.new` than `r.id = bar[0]`
+etc., right?
+
 -------------
 
 ## Ruby mindf
@@ -140,3 +158,13 @@ testen, Ich will Z testen. >> Ich baue A, Ich baue B, Ich baue C)
 Ich merke, dass eine Nachmittags-Einheit für den Flow schlecht ist -
 oftmals war es in letzter Zeit so, dass ab ca. 15.30/16.00 alles etwas
 ruhiger wurde und ich perfekt an den Tickets arbeiten konnte.
+
+## Pakete abschließen!!! Kniff: Pakete kleinhalten
+Dann ist es gar nicht schlimm, wenn Ruby 2.3.0 daher kommt, aber immer
+sicherstellen, dass das Neue irgendwann auch fertig ist und der alte
+Faden wieder gefunden wird. Und: Nicht 35 offene Sachen gleichzeitig zu
+haben ist immer gut.
+
+### Enumerable
+Vorgehen zB: Schritt 1 - was gibt es überhaupt an Methoden? Schritt 2 -
+Wie funktionieren die ersten 2, 3, 5 Methoden? etc.
