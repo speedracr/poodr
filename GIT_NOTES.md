@@ -69,3 +69,18 @@ gpg> y
 gpg> save
 ```
 
+## Rebasing
+Big topic, but let's start small: we have a branch and one of the
+commits contains sensitive info. If this is a private repo and no one
+else has pulled the branch, we can get away with rebasing the branch and
+squashing the fatal commit and a subsequent fixing commit into one:
+
+`git rebase -i master` loads the interactive rebasing, starting out from
+the changes made to master.
+Next, we replace `pick` with `s[quash]` for all commits that we want to
+bundle into one big (and cleaned-up) commit.
+Save and edit the commit message.
+If the branch is already on remote: `git push -f` will force-update
+the remote repo and in effect rewrite the repo's history. This would be
+mostly ineffective for a public repo or one where the offending branch
+already lives on other machines, but in this case, it's doable.
