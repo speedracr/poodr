@@ -53,4 +53,24 @@ in an AWS region: `"Resource":
 evaluated according to logic statements, for example to add a DateTime
 restriction to the policy.
 
-min 18 - continue.
+### Policy variables
+Lets you re-use existing keys as variables (- since you currently cannot
+define your own variables). If you use variables: Make sure to include a
+`"Version": "2016-01-01"` version statement.
+
+### Policies
+Managed policies are the way to go.
+
+### Examples
+1) Create a home directory on S3 for each user.
+We start out by creating a group that we can add all relevant users to.
+Then, it's just a matter of attaching a policy to that group:
+```
+"Version": "2016-01-01",
+"Statement": [
+  {"Sid": "AllowGroupToSeeBucketListInManagementConsole",
+  "Action": " ["s3:ListAllMyBuckets", "s3:GetBucketLocation"],
+  "Effect": "Allow",
+  "Resource": ["arn:aws:s3:::"]},
+  ...
+```
