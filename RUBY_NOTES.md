@@ -25,3 +25,8 @@ result = Array.find { |e| e.id == 42 }
 
 Great example why ActiveRecord is useful: plain Ruby doesn't know about
 `find_by(id: 42)`, whereas a Rails app with ActiveRecord does.
+
+## gsub
+Ha, this is easy: to strip out all characters except, e.g.,
+alphanumerics: `foo.gsub(^a-zA-Z0-9, '')`. Check the little ^, which is
+regex for "apply to everything **but** the following".
