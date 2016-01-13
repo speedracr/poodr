@@ -38,3 +38,8 @@ result, you'll need to select it via:
 result = array.select { |a| a.id == 42 }
 result[0]['first_name']
 ```
+
+## gsub
+Ha, this is easy: to strip out all characters except, e.g.,
+alphanumerics: `foo.gsub(^a-zA-Z0-9, '')`. Check the little ^, which is
+regex for "apply to everything **but** the following".
