@@ -16,6 +16,15 @@ Unix machines:
 `host www.foo.bar` will resolve the URL and shows both the actual IP
 server address and possible aliases.
 
+## shell
+To list all files:
+`ls -a`
+Human-readable file size:
+`ls -l`
+Sort by time:
+`ls -t`
+- all of them can be combined, too: `ls -lat`
+
 ## Environment setup
 `PATH` gets loaded via the shell initialization, meaning we can add
 items to our `$PATH` via `.zshrc'. (Items on the path are separated
