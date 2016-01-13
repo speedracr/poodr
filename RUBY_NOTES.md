@@ -25,3 +25,16 @@ result = Array.find { |e| e.id == 42 }
 
 Great example why ActiveRecord is useful: plain Ruby doesn't know about
 `find_by(id: 42)`, whereas a Rails app with ActiveRecord does.
+
+One step further: you can also have Ruby return the result as an object
+with `select`:
+``` ruby
+huge_array.select { |e| e.include?('foo') } # => '["foo;bar;123",
+"quix;foo;456"]
+```
+Important: this always returns an array, so even if you have just one
+result, you'll need to select it via:
+``` ruby
+result = array.select { |a| a.id == 42 }
+result[0]['first_name']
+```
