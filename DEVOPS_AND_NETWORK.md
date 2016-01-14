@@ -49,3 +49,29 @@ If the application can't connect to Postgres container
 when running in `docker-compose up`: make sure `links` includes
 `postgresql` container, then throw-away running Docker containers of
 that app and restart them from scratch.
+
+### LAN tricks
+You have a machine that you connect to via an open port from another
+server? In that case, connecting from the server to the machine using
+`ssh -p [port number] -A foo@bar.server` will get you there (`-A`
+forwards the SSH certificate you were using to log into the server, so
+that it doesn't use the middleman-root user's certificate but your
+local, personal one instead.
+
+Want to set up a good ol' local SSH connection? Easy:
+1) Find out IP address of machine you want to connect to with
+`ifconfig`. It'll likely be `192.168.FOO.BAR`.
+2) Open `~/.ssh/config` on your own machine.
+3) Add a new entry like so:
+```
+Host supermachine
+  HostName 192.168.FOO.BAR
+  User foo # => foo@thinkcenter
+  PubKeyAuthentication yes
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_rsa
+  ServerAliveInterval 60
+  ServerAliveCountMax 15
+```
+4) Connect using `ssh supermachine`.
+
