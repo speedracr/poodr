@@ -72,5 +72,25 @@ Then, it's just a matter of attaching a policy to that group:
   "Action": " ["s3:ListAllMyBuckets", "s3:GetBucketLocation"],
   "Effect": "Allow",
   "Resource": ["arn:aws:s3:::"]},
+  {"Sid": "AllowRootLevelListingOfThisBucketAndHomePrefix",
+  "Action": "["s3:ListBucket"],
+  "Effect": "Allow",
+  "Resource": ["arn:aws:s3:::myBucket"],
+  "Condition": {"StringEquals":{"s3:prefix":["",
+  "home/"],"s3:delimiter":["/"]}}},
+  ## ^^ necessary for console access ^^ ##
+
+  {"Sid":"AllowListBucketofASpecificUserPrefix",
+  "Action": ["s3:ListBucket"],
+  "Effect": "Allow",
+  "Resource": ["arn:aws:s3:::myBucket"],
+  "Condition": {"StringLike":
+  {"s3:prefix":["home/${aws:username}/*"]}}},
+
+  {"Sid":"AllowUserFullAccesstoJustSpecificUserPrefix",
+  "Action": ["s3:*"],
+  "Effect": "Allow",
+  "Resource": ["arn:aws:s3:::myBucket/home/${aws:username}",
+              "arn:aws:s3:::myBucket/home/${aws:username}/*"]}
   ...
 ```
