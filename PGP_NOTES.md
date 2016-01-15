@@ -47,7 +47,8 @@ gpg> save
 * to list all locally available files: `gpg --list-keys`. This will show
   all keys, their encryption algorithm and a UID (`2048R/UID123`)
 
-* to encrypt: `gpg --recipient UID123 / foo@bar.net -e file.txt`
+* to encrypt: `gpg --recipient UID123 / foo@bar.net -e file.txt`, or
+  short: `gpg -aer foo@bar.net file.txt'
 
 ### Decrypt a received message or file
 * if you have a file (`.gpg`/`.asc`), hit `gpg --decrypt foo.txt` on the
