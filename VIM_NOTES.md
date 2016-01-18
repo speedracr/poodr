@@ -62,3 +62,9 @@ Search for a string and replace:
 > `gc` will ask for confirmation
 > `gi` will make the operation case insensitive
 > `gI` will make the operation case sensitive
+
+## Save changes in new file
+So you made changes in your file and don't want to overwrite the
+original? Easy: `:w newfile.foo` will create a new file from your
+current status. Warning: Close the current file and open the new one,
+since another `:w` would then indeed overwrite the file.
