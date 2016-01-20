@@ -1,10 +1,18 @@
 # Questions and topics for weekly review
 
 ## DONE THIS WEEK
-* more ticket work - hooray!
-* little confusion
-* Linux admin/ Wifi card installed
-* tried out Slack, Imgur gems
+* participations
+* more apps, incl. some binstub fixing
+* S3 - hooray!
+
+
+## Q's
+* debugging Heroloader: for some reason, the upload sometimes only
+  really kicks in when reloading the page and/or when uploading a large
+  file (>300KB seems to work). How to debug?
+* rspec: Getting on my nerves. What's the basic approach - integration,
+  unit? On a conceptual level, what am I trying to achieve?
+
 
 ## Heroku
 Add-on pricing looks... interesting:
