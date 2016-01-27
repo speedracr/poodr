@@ -9,6 +9,9 @@ Find files: `find . -name '*.html'`
 In detail: specify the directory (optionally), pass in `-name` and
 argument, ideally escaped to unconfuse the CLI.
 
+Count number of files: list out all files by line, pipe through to
+WordCount with line flag `ls -1(a) | wc -l`. Done!
+
 `curl`: to download a file, do a `curl
 https://my.file.tld/file.name > this_is_the_local_file.name` and curl
 will download the file in question.
