@@ -86,3 +86,14 @@ http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
 
 YT playlist on MongoDB schema design:
 https://www.youtube.com/watch?v=LEwehYpTxCg&list=PLffUyEIMenSnRVQGxRVphq-HelRrSIdzh
+
+## Ops
+### MySQL
+It can happen that a table crashes, which will usually show up when
+running a bunch of setup commands, `bootstrap.sh`-style.
+Solution: start a MySQL console. That can be tricky in Docker, so
+instead, start a Rails console and then run:
+`ActiveRecord::Base.establish_connection` to check.
+`ActiveRecord::Base.connection.execute("SHOW tables;").to_a` will
+actually run the command. Swap as necessary, e.g. `"DROP TABLE IF EXISTS
+foo"`.
