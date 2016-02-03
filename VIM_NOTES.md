@@ -6,7 +6,9 @@ Leader-b: show recently opened files
 (Leader-)i: open file from NERDTree in new split
 (Leader-)s: open file from NERDTree in new vsplit
 Ctrp-p: index all files, then magic search for file names
-Search for a text pattern in currently open files: /[foo]
+Search for a text pattern in currently open files: `/foo`
+Search case sensitive/insensitive: `/\cfoo` for insensitive (Janus
+default), `/\Cfoo` for sensitive.
 Switch off highlighting after search: <leader> hs
 
 ## Power moves
