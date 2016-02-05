@@ -13,6 +13,9 @@ If you need the start, use `shift`/`unshift`: `Array.shift` will remove
 the first element of the array and return it, `Array.unshift('foo')`
 adds `'foo'` to the front. Magic!
 
+To remove a certain value (all occurences!) from our array, we can hit
+`Array.delete("")` or `Array = Array - [""]` and clean up.
+
 ## Array searching
 So you have an array with loads of content and are looking for a
 particular entry? Do this:
@@ -43,3 +46,20 @@ result[0]['first_name']
 Ha, this is easy: to strip out all characters except, e.g.,
 alphanumerics: `foo.gsub(^a-zA-Z0-9, '')`. Check the little ^, which is
 regex for "apply to everything **but** the following".
+
+## Histogram example
+Set up a new hash, with default value 0 to count up:
+`h = Hash.new(0)`
+
+Now, iterate over a list, array, ... and for each value, set a key in
+the hash and add 1 to its value. Then, sort the hash by number and
+reverse:
+
+``` ruby
+h = Hash.new(0)
+Array.each { |a| h[a] += 1 }
+h = h.sort_by { |k, v| v }
+h.reverse!
+```
+
+
