@@ -60,3 +60,35 @@ If starting from scratch: indeed something like Mackenzie Child's setup
 videos can be a good start, although they'll likely carry you through
 not too much more than building your first few apps with 60% efficiency.
 Still, more than good enough for starters.
+
+## Teaching
+Initial thoughts:
+* do you speak English well enough?
+* set aside a little budget for Treehouse, CodeSchool, etc
+* "tuition"
+* Linux or Mac
+* mentor sessions twice a week sounds useful
+
+Roadmap
+* GitHub and git
+* Colemak (optional)
+* set up Ruby, Rails, editor (Atom)
+* HTML/CSS with Grunt/Gulp/Guard and Bootstrap, Sass, Haml
+* then: build Rails app from scratch under guidance to get initial
+  overview, incl. basic AJAX/ remote feature
+* actually learn to code: basic Ruby with Codecademy/ LCTHW
+* Rails: Treehouse? Rails with Zombies?
+* deep dive and TDD introduction
+* build projects, projects, projects
+* deploy on AWS, Heroku
+* finish out with Rails API project
+* once the basics are done, give React and Swift a try - possibly first:
+  do a deep(er) dive into JS before working in React
+
+* pretty quickly: move to vim/emacs, TDD all the way, tickets/agile
+
+Meta
+* always push to GitHub, fork/branch/pull request
+* HTML/CSS with grunt/gulp and Sass
+* Slack
+
