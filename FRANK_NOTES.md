@@ -13,6 +13,11 @@
 * rspec: Getting on my nerves. What's the basic approach - integration,
   unit? On a conceptual level, what am I trying to achieve?
 
+* Modules:
+  * admin tunnel to database? Step by step, how does it work?
+  * MySQL console on slave?
+  * load balancer config
+
 
 ## Heroku
 Add-on pricing looks... interesting:
