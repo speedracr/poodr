@@ -92,3 +92,10 @@ Meta
 * HTML/CSS with grunt/gulp and Sass
 * Slack
 
+### Perspective
+As you continue, you'll find three angles to grow your knowledge: (1)
+cleaner code, as in POODR and familiarity with programming concepts and
+design patterns, (2) idiomatic competency, e.g. splitting up a model's
+functions into `concerns` and `use_cases`, and (3) expanding to other
+programming languages, either related (Python, JavaScript) or more
+distant (Swift, C++, COBOL) or adjacent (SQL/ Postgres)
