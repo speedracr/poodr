@@ -35,6 +35,11 @@ like I want. Eventually, I just hit <Ctrl-D> and my
 file gets saved.
 <Ctrl-D>
 ```
+Quick-add to files (handy with, for example, `.gitignore`):
+```
+echo "\n#This is a comment\nOn this new line, put text" >> .gitignore
+```
+Et voila, three new lines in your `.gitignore`.
 
 ## Bundle / devops
 `bundle outdated` lists all outdated gems (without making changes).

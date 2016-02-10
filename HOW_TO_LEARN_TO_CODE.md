@@ -99,3 +99,4 @@ design patterns, (2) idiomatic competency, e.g. splitting up a model's
 functions into `concerns` and `use_cases`, and (3) expanding to other
 programming languages, either related (Python, JavaScript) or more
 distant (Swift, C++, COBOL) or adjacent (SQL/ Postgres)
+In any case, your meta skills (git, vim, TDD) will always improve.
