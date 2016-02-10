@@ -19,6 +19,40 @@ decrypt on the fly.
 
 ## PUBLIC KEY ENCRYPTION
 
+### CREATE A KEY PAIR
+`gpg --gen-key- will generate a new pair of keys. Choose 4096-bit.
+
+* list your keys and show fingerprint:
+`gpg -K --keyid-format long --with-colons --with-fingerprint`
+
+* exporting your public key:
+via xclip: `gpg --export -a [fingerprint] | xclip -sel
+clip`
+
+* exporting your private key: (!!)
+via xclip(!!): gpg --export-secret-keys -a
+[fingerprint] | xclip -sel clip
+
+### EDIT EXISTING KEYS
+If you want to add an email address, there is no need to revoke the
+keys. Do this:
+```
+gpg --edit-key [key id]
+gpg> adduid
+[add information]
+gpg> save
+```
+
+Optionally, include this to indicate trust:
+```
+gpg> adduid
+gpg> uid [user id]
+gpg> trust
+gpg> 5
+gpg> y
+gpg> save
+```
+
 ### Generate a public key file
 `gpg --armor --export email@address/ UID > file.name.asc`
 
