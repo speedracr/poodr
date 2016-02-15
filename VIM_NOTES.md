@@ -53,6 +53,7 @@ screen
 ## Remap vim via dotfiles / .vimrc
 Remap save action to double; : `noremap ;; :update<CR>`
 Remap ESC action to jj in insert mode: `imap jj <ESC>`
+Remap `qq` to toggle `qa` quit all: `:cabbrev qq qa`, or shorter: `:ca`
 
 ## Search and replace
 File search: If you have `ack` installed, then <Leader> `f` will bring

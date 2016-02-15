@@ -51,3 +51,33 @@ If the branch is already on remote: `git push -f` will force-update
 the remote repo and in effect rewrite the repo's history. This would be
 mostly ineffective for a public repo or one where the offending branch
 already lives on other machines, but in this case, it's doable.
+
+## Rebasing in detail
+A starting note: "fast forwarding" actually means that git just lets
+HEAD on the master branch point to the most recent commit of the feature
+branch, effectively sticking the `HEAD master` label onto it. This
+happens when there are no merge conflicts and no other updates to
+`master`, e.g. when you merge a feature branch into `master` as part of
+a personal project.
+
+A three-way or **recursive** merge occurs when we need to consolidate
+updates to `master` that happened while you were working on your feature
+branch. For that, git needs to create a new commit that unites your own
+feature branch update with the update to master that came after you
+branched off.
+
+Now rebasing actually goes in and changes the history of your repo,
+although in a mostly innocent way: instead of going all the way of a
+recursive merge, imagine you had branched off *after* the update to
+master. Then, git could simply fast-forward `HEAD` and be done. With
+rebase, we're simply setting the base (or root -) commit for the
+feature branch-off to be just that commit that updated master.
+
+Operationally: on feature branch, execute `git rebase [root branch for
+rebase, most likely master]`. Done.
+
+### Rebase guidelines
+* Never rebase a branch you've made available publicly: Someone else may
+  have pulled it already and they won't be rebased with you, making
+  merges down the road pretty nerve-racking.
+* There is no other guideline.
