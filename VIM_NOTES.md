@@ -39,6 +39,7 @@ insert text with `"0p` (register > 0 > paste)
 
 ## Window manipulation
 Resize window: Ctrl-w and <> to increase/decrease width
+Minimize all other windows, except current: `<Cr-W>o` (toggles)
 Show NERD Tree Leader-n
 Swap windows: Ctrl-w and Ctrl-x / Ctrl-r (swap/rotate)
 
