@@ -7,11 +7,9 @@
 
 
 ## Q's
-* debugging Heroloader: for some reason, the upload sometimes only
-  really kicks in when reloading the page and/or when uploading a large
-  file (>300KB seems to work). How to debug?
-* rspec: Getting on my nerves. What's the basic approach - integration,
-  unit? On a conceptual level, what am I trying to achieve?
+* procs and lambdas: what is the practical application? (Also: learned
+  from Ruby tapa that `yield` is basically just calling a passed-in proc
+  with an argument.)
 
 * Modules:
   * admin tunnel to database? Step by step, how does it work?

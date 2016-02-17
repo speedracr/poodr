@@ -62,4 +62,52 @@ h = h.sort_by { |k, v| v }
 h.reverse!
 ```
 
+## Procs and lambdas
+Short, anonymous functions. Ex.:
+```ruby
+greeter = Proc.new do |name|
+  puts "Hello, #{name}"
+end
 
+greeter.call("Peter")
+```
+
+That can all be made much shorter, of course:
+```ruby
+greeter = proc do |name|
+  puts "Hello, #{name}"
+end
+
+greeter["Bob"]
+# or:
+greeter.("Alice")
+```
+
+A lambda is pretty much the same thing at first look:
+```ruby
+greeter_l = lambda do |name|
+  puts "Hello, #{name}"
+end
+greeter_l.call("Stacey")
+```
+
+But they are different in what arguments they accept: a proc will
+discard additional arguments, a lambda will fail:
+```ruby
+greeter.call("Peter", "Paul") # => Hello, Peter
+greeter_l.call("Mary", "Alice") # => error wrong number of arguments
+```
+
+Also, when `return`ing from a proc or lambda, the lambda will return and then
+retain reference to the context (or binding) that it was executed in,
+meaning code will continue and only the parts of the lambda after
+`return` are skipped. A `return` statement within a proc will terminate
+execution of the entire containing method, though.
+
+Short-hand lambda ('stubby') syntax:
+```ruby
+greeter_l = ->(name) {
+  puts "Hello, #{name}"
+}
+```
+will  kh
