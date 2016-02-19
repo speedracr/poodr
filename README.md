@@ -15,6 +15,11 @@ WordCount with line flag `ls -1(a) | wc -l`. Done!
 `curl`: to download a file, do a `curl
 https://my.file.tld/file.name > this_is_the_local_file.name` and curl
 will download the file in question.
+To use the existing file name and add progress indicator, do a `curl
+http://foo.file -O#`.
+Pro-tip: Chrome devtools give you a "Copy as cURL" option in the Network
+section. Use that as URL and download streaming files.
+
 To test a connection, simply `curl -i foo.bar:1337` - this will return
 the server response.
 `wget`: same idea. To download to file, use `wget
