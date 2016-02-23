@@ -16,6 +16,8 @@ On a file name: g-f will *go* to *file*
 Go back: Ctrl-Shift-^ (Ctrl-~) or Ctrl-O
 Go forward: Ctrl-I (inverse of Ctrl-O)
 List all files in a directory: Select file in NERDTree, then `:e` +
+NERDTree: reset root directory shown with `C`, go up one directory with
+`u` / `U`.
 `Ctrl-p` to paste in the current directory. Enter and voila, the file
 list appears in the main window.
 Auto-format mangled up text (e.g. crazy indentations): mark up lines and
