@@ -110,4 +110,17 @@ greeter_l = ->(name) {
   puts "Hello, #{name}"
 }
 ```
-will  kh
+
+## Ruby shorthand quirks
+Caret ^ use denotes a "bitwise XOR" operator:
+``` ruby
+unless panel.blank? ^ user_list.blank?
+```
+We're checking if either statement is true but not both of them at the
+same time - long form with identical effect:
+
+``` ruby
+unless (panel.blank? || user_list.blank?) &&
+    !(panel.blank? && user_list.blank? )
+```
+
