@@ -12,6 +12,8 @@ argument, ideally escaped to unconfuse the CLI.
 Count number of files: list out all files by line, pipe through to
 WordCount with line flag `ls -1(a) | wc -l`. Done!
 
+Count lines within a text file: `wc file_name.foo -l` Done!
+
 `curl`: to download a file, do a `curl
 https://my.file.tld/file.name > this_is_the_local_file.name` and curl
 will download the file in question.
